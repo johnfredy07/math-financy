@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout as LayoutDocument, Menu, Breadcrumb } from 'antd';
+import MatFinancy from '../pages/MatFinancy';
 
 const { Header, Footer, Content } = LayoutDocument;
 
@@ -22,7 +23,9 @@ const Document = () => {
       <Content style={{ padding: '0 50px', marginTop: 64 }}>
         <Breadcrumb style={{ margin: '16px 0' }}>
         </Breadcrumb>
-        <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>Content</div>
+        <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>
+        <MatFinancy/>
+        </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>Evaluación de proyectos ©2019-1 Creado por:
       <p>John <br /> Ana <br/>Alex <br/>Esteban <br/>Ivan</p></Footer>

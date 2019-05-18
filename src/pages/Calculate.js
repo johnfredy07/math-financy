@@ -1,5 +1,6 @@
 import React from 'react';
 import { Statistic, Card, Row, Col, Icon } from 'antd';
+import Title from '../Components/Title';
 
 const Calculate = ({ values }) => {
   console.log('val', values);
@@ -14,7 +15,7 @@ const periods = () => {
       const amount = calculateFuture() / (1 + (periods() * values.interest));
       return amount === 0 || values.interest === 0 ? values.presentAmount : amount;
     } else {
-      return 0;
+      return calculateFuture() / Math.pow((1 + values.interest),periods());
     }
   }
 
@@ -23,7 +24,7 @@ const periods = () => {
       const amount =  values.presentAmount * (1 + (periods() * values.interest));
       return amount === 0 || values.interest === 0 ? values.futureamount : amount;
     } else {
-      return 0;
+      return values.presentAmount * Math.pow((1 + values.interest),periods());
     }
   }
 
@@ -32,7 +33,7 @@ const periods = () => {
       return values.interest === 0 ? 
       values.periods : ((calculateFuture() / calculatePresent()) - 1) * (1 / values.interest);
     } else {
-      return 0;
+      return Math.log((calculateFuture() / calculatePresent())) / Math.log(1 + values.interest);
     }
   }
 
@@ -40,20 +41,17 @@ const periods = () => {
     if (values.typeInterest === "simple") {
       return ((calculateFuture() / calculatePresent()) - 1) * (1 / periods());
     } else {
-      return 0;
+      return Math.pow((calculateFuture() / calculatePresent()), 1 / periods()) - 1;
     }
   }
 
   const calculateAmountInterst = () => {
-    if (values.typeInterest === "simple") {
       return calculateFuture() - calculatePresent();
-    } else {
-      return 0;
-    }
   }
 
   return (
     <div style={{ background: '#ECECEC', padding: '30px' }}>
+      <Title text="Resultados"/>
       <Row gutter={16}>
         <Col span={12}>
           <Card>
@@ -96,7 +94,7 @@ const periods = () => {
               <Col span={6}>
                 <Statistic
                   title="Interés"
-                  value={calculateInterst()}
+                  value={calculateInterst().toFixed(2)}
                   precision={2}
                   valueStyle={{ color: '#cf1322' }}
                   prefix={<Icon type="arrow-down" />}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Select, Button, InputNumber, Row, Col } from 'antd';
 import Calculate from '../pages/Calculate';
-
+import Title from '../Components/Title';
 
 const { Option } = Select;
 
@@ -23,14 +23,13 @@ const MatFinancy = (props) => {
   };
 
   const handleReset = e => {
+    setCalculate(false);
     props.form.resetFields();
   }
 
   const handleChangeType = value => {
     console.log(value);
-    // props.form.setFieldsValue({
-    //   note: `Hi, ${value === 'male' ? 'man' : 'lady'}!`,
-    // });
+    handleReset();
   };
 
   const handleChangeCalculate = value => {
@@ -42,6 +41,7 @@ const MatFinancy = (props) => {
 
   return (
     <div>
+      <Title text="Calculos matemáticas financieras"/>
       <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={handleSubmit}>
         <Form.Item label="Tipo de interés">
           {getFieldDecorator('typeInterest', {
@@ -118,7 +118,7 @@ const MatFinancy = (props) => {
             <InputNumber
               min={0}
             />)}
-        </Form.Item>
+        </Form.Item>  
         <Form.Item wrapperCol={{ span: 12, offset: 5 }}>
           <Row gutter={2}>
             <Col span={4}>

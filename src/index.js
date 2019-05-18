@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import * as serviceWorker from './serviceWorker';
 import Layout from './pages/Layout';
+import './styles/index.css';
 
 const App = () => {
 return(<Layout/>);

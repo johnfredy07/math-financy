@@ -7,7 +7,7 @@ const { Header, Footer, Content } = LayoutDocument;
 const Document = () => {
 
   return (
-    <LayoutDocument>
+    <LayoutDocument className="secondary-color">
       <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
         <div className="logo" />
         <Menu
@@ -16,8 +16,8 @@ const Document = () => {
           defaultSelectedKeys={['1']}
           style={{ lineHeight: '64px' }}
         >
-          <Menu.Item key="1">Proyección financiera</Menu.Item>
-          <Menu.Item key="2">Acerda de</Menu.Item>
+          <Menu.Item key="1">MATEMÁTICA FINANCIERA</Menu.Item>
+          {/* <Menu.Item key="2">Acerda de</Menu.Item> */}
         </Menu>
       </Header>
       <Content style={{ padding: '0 50px', marginTop: 64 }}>
@@ -27,8 +27,12 @@ const Document = () => {
         <MatFinancy/>
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>Evaluación de proyectos ©2019-1 Creado por:
-      <p>John <br /> Ana <br/>Alex <br/>Esteban <br/>Ivan</p></Footer>
+      <Footer className="footer">Evaluación de proyectos ©2019-1 Creado por:
+      <p>Jhon Fredy Guzman <br /> 
+      Ana Maria Osorio <br/>
+      Alex <br/>
+      Esteban Monsalve <br/>
+      Ivan Berrio</p></Footer>
     </LayoutDocument>);
 }
 

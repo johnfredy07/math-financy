@@ -49,6 +49,7 @@ const MatFinancy = (props) => {
             initialValue: "simple",
           })(
             <Select
+              className="width-Select"
               placeholder="Seleccione tipo de interés"
               onChange={handleChangeType}
             >
@@ -63,6 +64,7 @@ const MatFinancy = (props) => {
             initialValue: "amountfuture",
           })(
             <Select
+              className="width-Select"
               placeholder="Seleccione tipo de calculo"
               onChange={handleChangeCalculate}
             >
@@ -80,6 +82,7 @@ const MatFinancy = (props) => {
             initialValue: 1,
           })(
             <InputNumber
+              className="width-Number"
               min={1}
               formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
               parser={value => value.replace(/\$\s?|(,*)/g, '')}
@@ -92,6 +95,7 @@ const MatFinancy = (props) => {
             initialValue: 1,
           })(
             <InputNumber
+              className="width-Number"
               min={1}
               formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
               parser={value => value.replace(/\$\s?|(,*)/g, '')}
@@ -104,7 +108,9 @@ const MatFinancy = (props) => {
             initialValue: 0,
           })(
             <InputNumber
+              className="width-Number"
               min={0}
+              max={1}
               formatter={value => `${value}%`}
               parser={value => value.replace('%', '')}
             />)}
@@ -116,17 +122,18 @@ const MatFinancy = (props) => {
             initialValue: 1,
           })(
             <InputNumber
+              className="width-Number"
               min={0}
             />)}
         </Form.Item>  
-        <Form.Item wrapperCol={{ span: 12, offset: 5 }}>
-          <Row gutter={2}>
-            <Col span={4}>
+        <Form.Item wrapperCol={{ xs:24,sm:8, offset: 5 }}>
+          <Row gutter={36}>
+            <Col xs={9} sm={8}>
               <Button type="primary" htmlType="submit">
                 Calcular
             </Button>
             </Col>
-            <Col span={4}>
+            <Col xs={9} sm={8}>
               <Button type="default" htmlType="reset" onClick={handleReset}>
                 Limpiar
             </Button>

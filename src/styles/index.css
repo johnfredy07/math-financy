@@ -23,9 +23,42 @@
   transition: background-size .5s ease;
 }
 
+.width-Number {
+  width: 40%;
+}
+
+.card {
+  box-shadow: 2px 4px 5px 1px rgb(98, 113, 128);
+}
+
+.ant-card-head {
+  background-color: #1890ff;
+  color: white;
+}
+
+@media (max-width: 700px){
+  .ant-statistic-content {
+    font-size: 13px;
+  }
+  .ant-card-head-wrapper {
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 701px){
+  .ant-statistic-content {
+    font-size: 35px;
+  }
+  .ant-card-head-wrapper {
+    font-size: 1.1rem;
+    white-space: pre-wrap;
+  }
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 8px;
+    height: 8px;
   }
   
   /* Track */

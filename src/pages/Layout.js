@@ -30,7 +30,7 @@ const Document = () => {
       <Footer className="footer">Evaluación de proyectos ©2019-1 Creado por:
       <p>Jhon Fredy Guzman <br /> 
       Ana Maria Osorio <br/>
-      Alex <br/>
+      Alexander Mejia <br/>
       Esteban Monsalve <br/>
       Ivan Berrio</p></Footer>
     </LayoutDocument>);
